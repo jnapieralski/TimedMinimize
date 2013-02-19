@@ -7,7 +7,7 @@ SetTimer, ShowDesktop, 10000
  Return
 
 ShowDesktop:
-	if (A_TimeIdle > 30000)
+	if (A_TimeIdle > 180000)
 	{	
 		SetTimer, ShowDesktop, Off
 		WinMinimizeAll
@@ -20,9 +20,7 @@ RestoreWindows:
 	{
 		SetTimer, RestoreWindows, Off
 		WinMinimizeAllUndo
-		Run HideDesktopIcons.exe
 		SetTimer, ShowDesktop, On
 	}
 	Return
 	
-^+F12::SendInput #+{Right} ;Switch Monitors
